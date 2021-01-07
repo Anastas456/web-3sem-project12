@@ -1,0 +1,30 @@
+<div class="mb-3" >
+    <div class="col-12">
+        <h5>Редактировать сотрудника</h5>
+    </div>
+    <form (submit)="onEditWorker(inputName.value, inputSurname.value)">
+        <div class="form-row">
+            <div class="col-4">
+                <input class="form-control" 
+                placeholder="{{workerForEdit.name}}" #inputName>
+            
+            </div>
+            <div class="col-4">
+                <input class="form-control" 
+                placeholder="{{workerForEdit.surname}}" #inputSurname>
+                
+            </div>
+            <div class="col-4">
+                <select class="custom-select" name="edittedType" [(ngModel)]="edittedType">
+                    <option [ngValue]="myWorkerType.programmer" >Программист</option>
+                    <option [ngValue]="myWorkerType.designer">Дизайнер</option>
+                    <option [ngValue]="myWorkerType.copywriter">Рекламщик</option>
+                    <option [ngValue]="myWorkerType.manager">Менеджер</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-outline-primary btn-sm mt-2" type="submit">Редактировать</button>
+            </div>
+        </div>
+    </form> 
+</div>
